@@ -8,14 +8,25 @@
     <title>GH Search Users</title>
   </head>
   <body>
-    <!-- //Find users on GitHub -->
-    <!-- <h1>Search GitHub Users</h1>
-    <p class="lead">Enter a username to fetch a user profile and repos</p>
-    <input type="text" id="searchUser" class="form-controle" placeholder="Github Username..."> -->
-
-
-      <div id="profile"></div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+      <div class="container">
+          <a class="navbar-brand" href="#">GitHub Finder</a>
       </div>
+    </nav>
+    <div class="container">
+        <div class="card border-secondary mb-3">
+            <div class="card-header">Find users on GitHub</div>
+            <div class="card-body">
+              <h4 class="card-title">Search GitHub Users</h4>
+              <p class="card-text">Enter a username to fetch a user profile and repos</p>
+              <input id="searchUser" class="form-control" type="text" placeholder="Github Username...">
+            </div>
+          </div>
+    </div>
+    <div class="container profileContainer"> 
+        <div id="profile"></div>
+      </div>
+    </div>
 
       <footer class="mt-5 p-3 text-center bg-light">
         Radoslaw Perczynski &copy;
@@ -30,7 +41,6 @@
 
     <script src="github.js"></script>
     <script src="ui.js"></script>
-   
     <script src="app.js"></script>
   </body>
 </html>
