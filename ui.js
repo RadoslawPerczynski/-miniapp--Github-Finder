@@ -66,5 +66,25 @@ class UI {
   hideResult() {
     this.userProfileScreen.style.display = 'none';
   }
+  highlighInput(state) {
+    const inputField = document.getElementById('searchUser');
+    if(state === "valid") {
+      inputField.className = "form-control is-valid"
+    } else if(state === "invalid") {
+      inputField.className = "form-control is-invalid"
+    } else if(state === "clear") {
+      inputField.className = "form-control"
+    }
+  }
+  loading(state) {
+    const loader = document.getElementById('loading');
+
+    if(state === 'show') {
+      loader.style.display = "block";
+    } else if (state === 'hide') {
+      loader.style.display = "none";
+
+    }
+  }
   
 }
