@@ -7,13 +7,22 @@ searchInput.addEventListener('input', (e) => {
   let userProfile = e.target.value;
   if(userProfile !== '') {
 
-    const user = github.getUserProfile(userProfile)
-      .then(data => console.log(data.profile))
-      .catch(err => console.log(err));
+    github.getUserProfile(userProfile)
+      .then(data => {
+   
+        if(data.profile.message != 'Not Found') {
 
-    //ui.showProfile(user);
+          ui.showProfile(data.profile);
+          ui.showRepos(data.repos);
+
+        } else {
+          //sshow alers
+        }
+      })
+      .catch(err => console.log(err));
+    
 
   } else {
-    //showing error
+      ui.hideResult();
   }
 })

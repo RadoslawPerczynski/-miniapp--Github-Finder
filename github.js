@@ -7,14 +7,21 @@ class GitHub {
   async getUserProfile(userName) {
 
     try {
-      const profileResponse = await fetch(`https://api.github.com/users/${userName}?client_id=${this.client_id}&client_secret=${this.client_secret}`);
+      const profileResponse = fetch(`https://api.github.com/users/${userName}?client_id=${this.client_id}&client_secret=${this.client_secret}`);
 
-      const profile = await profileResponse.json();
-      
+      const reposResponse = fetch(`https://api.github.com/users/${userName}/repos?sort=updated&per_page=15&client_id=${this.client_id}&client_secret=${this.client_secret}`);
+
+      //waiting for both to come back
+      const [receivedProfileData, receivedReposData] = await Promise.all([profileResponse, reposResponse]);
+      const profile = await receivedProfileData.json();
+      const repos = await receivedReposData.json();
+
       return {
-        profile
+        profile,
+        repos
       }
 
+      
     } catch(err) {
       console.error(err);
     }
