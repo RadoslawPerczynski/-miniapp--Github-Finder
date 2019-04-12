@@ -1,5 +1,6 @@
 class UI {
   constructor() {
+    //bind properties to all the needed fields in UI object
     this.userProfileScreen = document.getElementById('profile');;
     this.userLogin = document.getElementById('userLogin');
     this.userName = document.getElementById('userName');
@@ -18,6 +19,7 @@ class UI {
   }
 
   showProfile(userResponse) {
+    //set the values for each fields depending on the data passed.
     this.userLogin.textContent = userResponse.login;
     this.userName.textContent = userResponse.name;
     this.userMail.textContent = userResponse.email;
@@ -31,43 +33,40 @@ class UI {
     this.visitProfileButton.href = userResponse.html_url;
     this.profileUpdatedDate.textContent = this.convertDate(userResponse.updated_at);
 
-
     this.userProfileScreen.style.display = 'block'
 
   }
   convertDate(date) {
     let newDateObj = new Date(date)
-
     let localDate = newDateObj.toLocaleString("en-GB");
     return localDate;
   }
 
   showRepos(userRepos) {
-    //check why I get undefined just once all the time what da fuck.
     let listOfRepositioriesToHtml = '';
-    let self = this;
 
-    userRepos.forEach(function(x) {
+    userRepos.forEach(x => {
       listOfRepositioriesToHtml += `
       <li class="list-group-item ">
-        <a href="${x.url}" class="card-link">${x.name}</a>
+        <a href="${x.html_url}" class="card-link" target="_blank">${x.name}</a>
         <span class="badge badge-primary badge-pill float-right">Stars: ${x.stargazers_count}</span>  
         <span class="badge badge-secondary badge-pill float-right">Watchers: ${x.watchers}</span>
-        <span class="badge badge-success badge-pill float-right">Updated: ${self.convertDate(x.updated_at)}</span>
+        <span class="badge badge-success badge-pill float-right">Updated: ${this.convertDate(x.updated_at)}</span>
       </li>
       `
     });
 
     this.repositories.innerHTML = listOfRepositioriesToHtml;
 
-
   }
 
   hideResult() {
     this.userProfileScreen.style.display = 'none';
   }
+
   highlighInput(state) {
     const inputField = document.getElementById('searchUser');
+    
     if(state === "valid") {
       inputField.className = "form-control is-valid"
     } else if(state === "invalid") {

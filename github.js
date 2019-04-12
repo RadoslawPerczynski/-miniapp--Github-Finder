@@ -20,10 +20,9 @@ class GitHub {
         profile,
         repos
       }
-
       
     } catch(err) {
-      console.error(err + 'radek error');
+      console.log('Issue with calling api. Error: ' + err);
     }
  
     

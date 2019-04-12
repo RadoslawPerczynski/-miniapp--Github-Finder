@@ -21,24 +21,19 @@
               <p class="card-text">Enter a username to fetch a user profile and repos</p>
               <div class="searchContainer" style="position:relative;">
                 <input id="searchUser" class="form-control" type="text" placeholder="Github Username...">
-
                 <div id="loading" class="loader" style="position: absolute;
                 top: 0;
                 right: 0; display: none">
                   <img src='./loader.gif' width="35">
                 </div>
-  
                 <div class="valid-feedback">User found</div>
                 <div class="invalid-feedback">User doesn't exist</div>
-                
               </div>
-             
             </div>
           </div>
     </div>
     <div class="container profileContainer"> 
         <div id="profile" style="display:none;">
-         
           <div class="row">
             <div class="col-12 col-md-4">
               <div class="card mb-3">
@@ -47,11 +42,10 @@
                   <h5 class="card-title" id="userName">Name and Surname</h5>
                   <h5 class="card-title" id="userMail">E-mail</h5>
                   <h6 class="card-subtitle text-muted" id="userLocation">Location</h6>
-                  
                 </div>
-                <img id="userImg" style="height: auto; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image">
+                <img id="userImg" style="height: auto; width: 100%; display: block;" src="" alt="">
                 <div class="card-body">
-                  <p class="card-text" id="userBio">XXX XXX xxxx xxxxx</p>
+                  <p class="card-text" id="userBio">Bio</p>
                 </div>
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item d-flex justify-content-between align-items-center">Public Rebos: 
@@ -66,51 +60,34 @@
                   <li class="list-group-item d-flex justify-content-between align-items-center">Following: 
                     <span class="badge badge-primary badge-pill" id="userFollowing">xx</span>
                   </li>
-                 
                 </ul>
                 <div class="card-body">
                   <a href="#" class="btn btn-primary btn-lg btn-block" target="_blank" id="visitProfileButton">Visit profile</a>
-               
                 </div>
                 <div class="card-footer text-muted">
                   Last Profile Update: <span id="profileUpdatedDate">xx xx xxx</span>
                 </div>
               </div>
-          
             </div>
             <div class="col-12 col-md-8">
-             
               <div class="card mb-3">
                 <h3 class="card-header">Last Repos</h3>
-        
                 <ul class="list-group list-group-flush" id="repositories">
-                
                 </ul>
-               
               </div>
-            
-
-
             </div>
           </div>
-
-
-
-
         </div>
       </div>
     </div>
 
-      <footer class="mt-5 p-3 text-center bg-light">
-        Radoslaw Perczynski &copy;
-      </footer>
+    <footer class="mt-5 p-3 text-center bg-light">
+      Radoslaw Perczynski &copy;
+    </footer>
  
-      
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script src="github.js"></script>
     <script src="ui.js"></script>
